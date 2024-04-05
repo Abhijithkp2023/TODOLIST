@@ -14,7 +14,7 @@ const Create = () => {
   return (
     <div className=''>
       <input type='text' className=' mx-4 mb-6 p-2 border ring-1 ring-black border-black' placeholder='Enter Task' onChange={(e)=> setAddTask(e.target.value)} ></input>
-      <button type='' className='px-3 text-md border border-black bg-black text-white' onClick={handleTask}>ADD</button>
+      <button type='button' className='px-3 text-md border border-black bg-black text-white' onClick={handleTask}>ADD</button>
     </div>
   )
 }
