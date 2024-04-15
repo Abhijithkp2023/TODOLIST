@@ -18,13 +18,21 @@ const Home = () => {
   },[]);
 
   const handleEdit = (id) => {
-    console.log(id)
     axios.put('http://localhost:3001/update/'+id)
     .then((result) => {
       location.reload()
     })
     .catch((err) => console.log(err));
   };
+
+  const handleDelete = (id) => {
+    
+    axios.delete("http://localhost:3001/delete/"+id)
+    .then(result => {
+      location.reload()
+    })
+    .catch((err) => console.log(err));
+  }
 
 
   
@@ -54,7 +62,7 @@ const Home = () => {
                 {todo.task}
               </div>
               <div>
-                <img className="w-10/12" src={delimg} />
+                <img className="w-10/12" src={delimg} onClick={() => handleDelete(todo._id)}/>
               </div>
             </div>
           ))
